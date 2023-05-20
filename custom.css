@@ -1,0 +1,22 @@
+/* set grid cells to center symbols and bold them */
+.tile {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* game status text properties */
+#status {
+    font-size: 30px;
+    color: red;
+}
+
+/* progress bar properties */
+#bar {
+    width: 0%;
+    height: 30px;
+    background-color: seagreen;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    transition: width 5s linear;
+}
