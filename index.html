@@ -12,14 +12,17 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="main">
         <h1>Tic-Tac-Toe</h1>
-        <!-- display rules -->
-        <p>Click on the tiles in the grid to choose where you want to draw your symbol. One player will be represented
-            by the <b>X</b> symbol and the other one will be the represented by the <b>O</b> symbol. This game will
-            restart automatically 5 seconds after the game ends or it can be manually reset with the 'Restart/Reset'
-            button at any time.
-        </p>
+        <div class="instructions">
+            <!-- display rules -->
+            <p>Click on the tiles in the grid to choose where you want to draw your symbol. One player will be
+                represented
+                by the <b>X</b> symbol and the other one will be the represented by the <b>O</b> symbol. This game will
+                restart automatically 5 seconds after the game ends or it can be manually reset with the 'Restart/Reset'
+                button at any time.
+            </p>
+        </div>
         <!-- use bootstrap 5 to make table responsive to screen size changes -->
         <div class="table-responsive">
             <!-- tic-tac-toe grid created using 3x3 table -->
@@ -48,7 +51,7 @@
         <!-- displays game status -->
         <p id="status"></p>
         <!-- restart/reset button -->
-        <button onclick="window.location.reload();">Restart/Reset</button>
+        <button class="restart" onclick="window.location.reload();">Restart/Reset</button>
     </div>
     <div class="container-fluid">
         <!-- restart progress bar -->

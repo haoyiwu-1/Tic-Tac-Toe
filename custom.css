@@ -1,7 +1,27 @@
 /* set grid cells to center symbols and bold them */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.instructions {
+    max-width: 576px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .tile {
     text-align: center;
     font-weight: bold;
+    width: 30vw;
+    max-width: 192px;
+}
+
+.restart {
+    width: min-content;
 }
 
 /* game status text properties */
@@ -14,9 +34,8 @@
 #bar {
     width: 0%;
     height: 30px;
-    background-color: seagreen;
+    background-color: black;
     text-align: center;
     line-height: 30px;
     color: white;
-    transition: width 5s linear;
 }
