@@ -38,4 +38,9 @@
     text-align: center;
     line-height: 30px;
     color: white;
+    transition: width 5s linear;
+}
+
+#bar.animate {
+    width: 100%;
 }

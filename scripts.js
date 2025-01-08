@@ -250,7 +250,7 @@ function checkGameCondition() {
         cell20.style.backgroundColor = "LightGray";
         cell11.style.backgroundColor = "LightGray";
         cell02.style.backgroundColor = "LightGray";
-        status.textContent = 'Tie! Restarting game...';
+        status.textContent = 'Tie game! Restarting game...';
         status.style.fontweight = "bold";
         restart();
         // if game not over simply display current player's turn
@@ -289,17 +289,22 @@ function turnTimeout() {
 // restart function to restart game after 5s and show restart progress bar
 function restart() {
     var bar = document.getElementById("bar");
-    var width = 0;
-    var time = setInterval(frame, 50);
-    function frame() {
-        if (width >= 100) {
-            clearInterval(time);
-            window.location.reload();
-        } else {
-            width += 1;
-            bar.style.width = width + "%";
-            bar.textContent = "Restarting " + width + "%";
-            bar.style.fontWeight = "bold";
+    var percentageText = document.getElementById("percentage");
+    var barContainer = document.getElementById("bar-container");
+    bar.classList.add('animate');
+
+    setInterval(function () {
+        var barWidth = bar.offsetWidth;
+        var containerWidth = barContainer.offsetWidth;
+
+        var percentage = (barWidth / containerWidth) * 100;
+
+        if (percentage <= 100) {
+            percentageText.textContent = Math.round(percentage) + "%";
         }
-    }
+    }, 50);
+
+    setTimeout(function () {
+        window.location.reload();
+    }, 5500);
 }
